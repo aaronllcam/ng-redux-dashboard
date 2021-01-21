@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { Swal } from 'sweetalert2/dist/sweetalert2.js';
 
 
 @Component({
