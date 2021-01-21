@@ -14,7 +14,7 @@ export class AuthService {
 
   initAuthListener(){
     //Recuperamos toda la informacion del usuario.
-    //Llamamos en est funcion en el app.component, ya que el app.component se llama en todas laas vistas
+    //Llamamos en esta funcion en el app.component, ya que el app.component se llama en todas laas vistas
     this.auth.authState.subscribe( firebaseUser => {
       console.log(firebaseUser)
       console.log(firebaseUser?.uid)
