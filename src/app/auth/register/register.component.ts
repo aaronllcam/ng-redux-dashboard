@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+import { Swal } from 'sweetalert2/dist/sweetalert2.js';
+
 
 @Component({
   selector: 'app-register',
@@ -27,13 +30,27 @@ export class RegisterComponent implements OnInit {
   createUser(){
     
     if(this.registerForm.invalid) return;
-
+    Swal.fire({
+      title: 'Espere por favor!',
+      timerProgressBar: true,
+      didOpen:() => {
+        Swal.showLoading()
+      }
+    });
     const {user, email, pass } = this.registerForm.value;
     this._authService.createUser(user, email, pass)
-        .then(credenciales => {
-          this.router.navigate(['/']);
-        })
-        .catch(console.log);
-   }
+                      .then(credenciales => {
+                        Swal.close();
+                        this.router.navigate(['/']);
+                      })
+                      .catch(err => {
+                        Swal.fire({
+                          title: 'Error!',
+                          text: err.message,
+                          icon: 'error',
+                          confirmButtonText: 'Aceptar'
+                        })
+                      })
+  }
 
 }
