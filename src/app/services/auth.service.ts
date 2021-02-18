@@ -14,6 +14,11 @@ import * as authActions from './../auth/auth.actions';
 export class AuthService {
 
   userSubscription: Subscription;
+  private _user : User;
+
+  get user(){
+    return {...this._user};
+  }
 
   constructor(public auth: AngularFireAuth,
               private firestore: AngularFirestore,
@@ -27,9 +32,11 @@ export class AuthService {
         this.userSubscription = this.firestore.doc(`${firebaseUser.uid}/usuario`).valueChanges()
                                     .subscribe( ({ uid, name, email }) => {
                                       const user = new User(uid, name, email);
+                                      this._user = user;
                                       this.store.dispatch(authActions.setUser({ user }));
                                     });
       }else{
+        this._user = null;
         this.userSubscription.unsubscribe();
         this.store.dispatch(authActions.unSetUser());
       }
