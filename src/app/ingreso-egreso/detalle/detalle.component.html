@@ -15,12 +15,24 @@
               </thead>
 
               <tbody>
-                <tr>
-                  <td>Descripción</td>
-                  <td>Monto</td>
-                  <td>Tipo</td>
-                  <td>acciones</td>
+
+                <tr *ngFor="let ingresoEgreso of ingresosEgresos | sortIngresoType; index as idx">
+                  <td>{{ ingresoEgreso.descripcion }}</td>
+                  <td>{{ ingresoEgreso.monto | currency:'EUR':'symbol-narrow'}}</td>
+                  <td [ngClass]="{
+                        'text-success': ingresoEgreso.tipo === 'ingreso', 
+                        'text-warning': ingresoEgreso.tipo === 'egreso'
+                       }">
+                    {{ ingresoEgreso.tipo }}
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-outline-danger"
+                            (click)="delete( ingresoEgreso.uid, idx )">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
                 </tr>
+
               </tbody>
 
             </table>
