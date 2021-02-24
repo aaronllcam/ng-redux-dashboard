@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from './../../services/auth.service';
@@ -7,12 +8,16 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import * as actions from './../../shared/ui.actions';
 import Swal from 'sweetalert2'
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> 28d8168230e6474ea294fa274c278fe74734954b
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+<<<<<<< HEAD
 export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup;
@@ -64,6 +69,13 @@ export class LoginComponent implements OnInit, OnDestroy {
                         })
                       });
 
+=======
+export class LoginComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+>>>>>>> 28d8168230e6474ea294fa274c278fe74734954b
   }
 
 }

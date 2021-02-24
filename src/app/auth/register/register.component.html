@@ -5,6 +5,7 @@
         <div class="col-lg-4 mx-auto">
           <h2 class="text-center mb-4">Registro</h2>
           <div class="auto-form-wrapper">
+<<<<<<< HEAD
             
             <form 
               [formGroup]="registerForm"
@@ -38,12 +39,22 @@
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i *ngIf="registerForm.get('email').valid" class="fa fa-check-circle"></i>
+=======
+            <form action="#">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Correo">
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fa fa-check-circle"></i>
+>>>>>>> 28d8168230e6474ea294fa274c278fe74734954b
                     </span>
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
+<<<<<<< HEAD
 
                   <input 
                     type="password" 
@@ -54,12 +65,19 @@
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i *ngIf="registerForm.get('pass').valid" class="fa fa-check-circle"></i>
+=======
+                  <input type="password" class="form-control" placeholder="Password">
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fa fa-check-circle"></i>
+>>>>>>> 28d8168230e6474ea294fa274c278fe74734954b
                     </span>
                   </div>
                 </div>
               </div>
 
               <div class="form-group">
+<<<<<<< HEAD
                 <button 
                   [disabled]="registerForm.invalid"
                   type="submit" 
@@ -76,6 +94,9 @@
                     <i class="fa fa-spin fa-sync"></i>
                   Espere...
                 </button>
+=======
+                <button class="btn btn-primary submit-btn btn-block">Crear cuenta</button>
+>>>>>>> 28d8168230e6474ea294fa274c278fe74734954b
               </div>
               <div class="text-block text-center my-3">
                 <span class="text-small font-weight-semibold">ya tienes una cuenta?</span>

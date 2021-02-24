@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../../services/auth.service';
@@ -9,12 +10,16 @@ import * as actions from './../../shared/ui.actions';
 import Swal from 'sweetalert2';
 
 
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> 28d8168230e6474ea294fa274c278fe74734954b
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+<<<<<<< HEAD
 export class RegisterComponent implements OnInit, OnDestroy {
 
   registerForm: FormGroup;
@@ -67,6 +72,13 @@ export class RegisterComponent implements OnInit, OnDestroy {
                           confirmButtonText: 'Aceptar'
                         })
                       })
+=======
+export class RegisterComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+>>>>>>> 28d8168230e6474ea294fa274c278fe74734954b
   }
 
 }
