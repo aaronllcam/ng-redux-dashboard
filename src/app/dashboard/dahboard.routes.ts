@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EstadisticaComponent } from './../ingreso-egreso/estadistica/estadistica.component';
 import { DetalleComponent } from './../ingreso-egreso/detalle/detalle.component';
@@ -10,9 +9,3 @@ export const dashboardRoutes: Routes = [
   {path: 'ingreso-egreso', component: IngresoEgresoComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
-
-// @NgModule({
-//   imports: [RouterModule.forRoot(dashboardRoutes)],
-//   exports: [RouterModule]
-// })
-// export class DashboardRoutes { }

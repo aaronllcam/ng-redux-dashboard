@@ -22,7 +22,6 @@ export class DetalleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.ingresosEgresosSubscribe = this.store.select('ingresosEgresos').subscribe( ({ items }) => this.ingresosEgresos = items);
-    console.log(this.ingresosEgresos);
   }
 
   ngOnDestroy(): void {
