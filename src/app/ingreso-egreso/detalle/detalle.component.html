@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Detalle de ingreso egreso</h4>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Descripción</th>
+                  <th>Monto</th>
+                  <th>Tipo</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr *ngFor="let ingresoEgreso of ingresosEgresos | sortIngresoType; index as idx">
+                  <td>{{ ingresoEgreso.descripcion }}</td>
+                  <td>{{ ingresoEgreso.monto | currency:'EUR':'symbol-narrow'}}</td>
+                  <td [ngClass]="{
+                        'text-success': ingresoEgreso.tipo === 'ingreso', 
+                        'text-warning': ingresoEgreso.tipo === 'egreso'
+                       }">
+                    {{ ingresoEgreso.tipo }}
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-outline-danger"
+                            (click)="delete( ingresoEgreso.uid, idx )">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+
+          </div>
+        </div>
+    </div>
+</div>
+  
