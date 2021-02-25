@@ -13,7 +13,6 @@ import { appReducers } from './app.reducer';
 
 import { environment } from './../environments/environment';
 import { AuthModule } from './auth/auth.module';
-import { IngresoEgresoModule } from './ingreso-egreso/ingreso-egreso.module';
 
 //Components
 import { AppComponent } from './app.component';
@@ -24,7 +23,6 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     AuthModule,
-    IngresoEgresoModule,
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
