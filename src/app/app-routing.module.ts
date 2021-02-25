@@ -15,12 +15,6 @@ const routes: Routes = [
     canLoad: [ AuthGuard ],  //Con canload prevenimos que carge el modulo de ingreso egreso en la vista de login
     loadChildren: () => import('./ingreso-egreso/ingreso-egreso.module').then( m => m.IngresoEgresoModule)
   },
-  // {
-  //   path: '', 
-  //   component: DashboardComponent,
-  //   children: dashboardRoutes,
-  //   canActivate: [ AuthGuard ]
-  // },
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { AppState } from './../../app.reducer';
 import { ChartType } from 'chart.js';
 import { MultiDataSet, Label } from 'ng2-charts';
+import { AppStateWithIngreso } from '../ingreso-egreso.reducer';
 
 @Component({
   selector: 'app-estadistica',
@@ -23,7 +24,8 @@ export class EstadisticaComponent implements OnInit, OnDestroy {
   public doughnutChartData    : MultiDataSet;
   public doughnutChartType    : ChartType   = 'doughnut';
   
-  constructor(private store: Store<AppState>) { }
+  //inyectamos AppStateWithIngreso por el tema del lazy load, ya que en la propiedad en el appstate original no estaria disponoble por el tema del lazy load
+  constructor(private store: Store<AppStateWithIngreso>) { }
 
   ngOnInit(): void {
     this.totalSubscription$ = this.store.select('ingresosEgresos')
